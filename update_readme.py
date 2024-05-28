@@ -1,19 +1,45 @@
-import json
 import requests
+import json
 from datetime import datetime, timedelta
 
-# Fetch LeetCode stats
-username = "harshit120299"
-response = requests.get(f"https://leetcode-stats-api.herokuapp.com/{username}")
-data = response.json()
+def fetch_leetcode_data(username):
+    response = requests.get(f"https://leetcode-stats-api.herokuapp.com/{username}")
+    if response.status_code != 200:
+        raise Exception("Failed to fetch LeetCode data")
+    return response.json()
 
-# Update README with stats
-total_solved = data['totalSolved']
-easy_solved = data['easySolved']
-medium_solved = data['mediumSolved']
-hard_solved = data['hardSolved']
+def generate_activity_data():
+    today = datetime.now()
+    activity_data = {}
+    for i in range(365):
+        date = (today - timedelta(days=i)).strftime('%Y-%m-%d')
+        activity_data[date] = 0  # Default to 0 problems solved per day
+    return activity_data
 
-new_readme_content = f"""
+def generate_svg(activity_data):
+    colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
+    svg = ['<svg width="720" height="110" xmlns="http://www.w3.org/2000/svg">']
+    svg.append('<g transform="translate(20, 20)">')
+    
+    for i, (date, count) in enumerate(sorted(activity_data.items())):
+        week = i // 7
+        day = i % 7
+        color = colors[min(count, len(colors) - 1)]
+        x = week * 13
+        y = day * 13
+        svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" />')
+    
+    svg.append('</g></svg>')
+    return "\n".join(svg)
+
+def update_readme(username, svg_content):
+    data = fetch_leetcode_data(username)
+    total_solved = data['totalSolved']
+    easy_solved = data['easySolved']
+    medium_solved = data['mediumSolved']
+    hard_solved = data['hardSolved']
+    
+    readme_content = f"""
 # LeetCode Stats
 
 ![LeetCode Stats](https://leetcode-stats-api.herokuapp.com/{username})
@@ -28,43 +54,26 @@ new_readme_content = f"""
 ![LeetCode Activity](./leetcode_activity.svg)
 """
 
-with open("README.md", "w") as f:
-    f.write(new_readme_content)
+    with open("README.md", "w") as f:
+        f.write(readme_content)
+    
+    with open("leetcode_activity.svg", "w") as f:
+        f.write(svg_content)
 
-# Generate SVG calendar
-def generate_svg(data):
-    svg_header = '<svg width="720" height="110" xmlns="http://www.w3.org/2000/svg">'
-    svg_footer = '</svg>'
-    svg_body = ''
+def main():
+    username = "harshit120299"
+    activity_data = generate_activity_data()
+    # Assuming data['problems_solved_per_day'] is a dict with date as key and problems solved as value
+    # You need to populate activity_data with the actual LeetCode activity data
+    # For example: activity_data['2024-05-27'] = 5
+    data = fetch_leetcode_data(username)
+    problems_solved = data.get("problems_solved_per_day", {})
+    for date, count in problems_solved.items():
+        if date in activity_data:
+            activity_data[date] = count
 
-    start_date = datetime.now() - timedelta(days=365)
-    day_width = 10
-    day_height = 10
-    day_padding = 2
-    x_offset = 20
-    y_offset = 20
+    svg_content = generate_svg(activity_data)
+    update_readme(username, svg_content)
 
-    for i in range(365):
-        date = start_date + timedelta(days=i)
-        solved_count = data.get(date.strftime('%Y-%m-%d'), 0)
-        color = "#ebedf0"  # Default color for 0 solved problems
-
-        if solved_count > 0:
-            color = "#c6e48b"  # Example color for solved problems
-
-        x = x_offset + (i % 52) * (day_width + day_padding)
-        y = y_offset + (i // 52) * (day_height + day_padding)
-
-        svg_body += f'<rect x="{x}" y="{y}" width="{day_width}" height="{day_height}" fill="{color}" />'
-
-    return svg_header + svg_body + svg_footer
-
-activity_data = {
-    (datetime.now() - timedelta(days=i)).strftime('%Y-%m-%d'): i % 5
-    for i in range(365)
-}
-
-svg_content = generate_svg(activity_data)
-
-with open("leetcode_activity.svg", "w") as f:
-    f.write(svg_content)
+if __name__ == "__main__":
+    main()
