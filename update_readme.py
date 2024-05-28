@@ -17,7 +17,7 @@ with open('README.md', 'r') as f:
 new_readme_content = f"""
 # LeetCode Stats
 
-![LeetCode Stats](https://leetcode-stats-api.herokuapp.com/your-leetcode-username)
+![LeetCode Stats](https://leetcode-stats-api.herokuapp.com/harshit120299)
 
 ## Solved Problems
 - Total: {total_solved}
