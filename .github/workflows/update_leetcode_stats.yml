@@ -2,7 +2,7 @@ name: Update LeetCode Stats
 
 on:
   schedule:
-    - cron: '0 */8 * * *' # Runs every minute
+    - cron: '0 */8 * * *' # Runs every 8 hours
   push:
     branches:
       - main
@@ -27,7 +27,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Fetch LeetCode Stats and Update README
+      - name: Fetch LeetCode Stats and Generate SVG
         run: |
           curl -o leetcode_stats.json "https://leetcode-stats-api.herokuapp.com/harshit120299"
           python update_readme.py
@@ -40,6 +40,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git commit -m 'Update LeetCode stats'
+          git add README.md leetcode_activity.svg leetcode_stats.json
+          git commit -m 'Update LeetCode stats and activity'
           git push https://$G_TOKEN@github.com/jharsh1202/jharsh1202.git
