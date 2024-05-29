@@ -62,14 +62,10 @@ def update_readme(username, svg_content):
     
     readme_content = f"""## Leetcode 
 
-## Solved Problems 🚀 
+## Solved DSA Problems 🚀 
 
 ![LeetCode Activity](./leetcode_activity.svg)
 #### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
-# DSA Preparation Tracker
-
-## Table of Contents
-
 <details>
   <summary>Data Structures</summary>
   
