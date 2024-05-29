@@ -62,13 +62,24 @@ def update_readme(username, svg_content):
 
 def main():
     username = "harshit120299"
+    data = fetch_leetcode_data(username)
     activity_data = generate_activity_data()
     # Assuming data['problems_solved_per_day'] is a dict with date as key and problems solved as value
     # You need to populate activity_data with the actual LeetCode activity data
     # For example: activity_data['2024-05-27'] = 5
-    data = fetch_leetcode_data(username)
-    problems_solved = data.get("problems_solved_per_day", {})
-    for date, count in problems_solved.items():
+    problems_solved = data.get("submissionCalendar", {})
+    converted_data = {}
+    for timestamp, value in problems_solved.items():
+        # Convert the timestamp to an integer
+        timestamp = int(timestamp)
+        # Convert the Unix timestamp to a datetime object
+        dt_object = datetime.utcfromtimestamp(timestamp)
+        # Format the datetime object as a date string
+        date_str = dt_object.strftime('%Y-%m-%d')
+        # Add the date string as the key in the new dictionary
+        converted_data[date_str] = value
+
+    for date, count in converted_data.items():
         if date in activity_data:
             activity_data[date] = count
 
