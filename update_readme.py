@@ -1,6 +1,6 @@
 import requests
 import json
-from datetime import datetime, timedelta
+import datetime
 
 def fetch_leetcode_data(username):
     response = requests.get(f"https://leetcode-stats-api.herokuapp.com/{username}")
@@ -9,10 +9,10 @@ def fetch_leetcode_data(username):
     return response.json()
 
 def generate_activity_data():
-    today = datetime.now()
+    today = datetime.datetime.now()
     activity_data = {}
     for i in range(365):
-        date = (today - timedelta(days=i)).strftime('%Y-%m-%d')
+        date = (today - datetime.timedelta(days=i)).strftime('%Y-%m-%d')
         activity_data[date] = 0  # Default to 0 problems solved per day
     return activity_data
 
@@ -133,7 +133,7 @@ def main():
         # Convert the timestamp to an integer
         timestamp = int(timestamp)
         # Convert the Unix timestamp to a datetime object
-        dt_object = datetime.fromtimestamp(timestamp)
+        dt_object = datetime.datetime.fromtimestamp(timestamp)
         # Format the datetime object as a date string
         date_str = dt_object.strftime('%Y-%m-%d')
         # Add the date string as the key in the new dictionary
