@@ -1,5 +1,4 @@
 import requests
-import json
 from datetime import datetime, timedelta
 
 def fetch_leetcode_data(username):
