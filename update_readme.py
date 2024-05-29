@@ -15,15 +15,14 @@ def generate_activity_data():
         date = (today - timedelta(days=i)).strftime('%Y-%m-%d')
         activity_data[date] = 0  # Default to 0 problems solved per day
     return activity_data
+from datetime import datetime, timedelta
 
 def generate_svg(activity_data):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
     svg = ['<svg width="900" height="140" viewBox="0 0 900 140" xmlns="http://www.w3.org/2000/svg">']
-    
-    # Add background color
-    svg.append('<rect x="0" y="0" width="900" height="140" fill="#222222" />')
+    svg.append('<style>.small { font: 8px sans-serif; fill: black; }</style>')  # Change font text color to white
+    svg.append('<rect width="100%" height="100%" fill="white" />')  # Add white background
 
-    svg.append('<style>.small { font: 8px sans-serif; fill: white; }</style>')  # Change font text color to white
     svg.append('<g transform="translate(20, 20)">')
     
     # Add day labels
@@ -54,7 +53,10 @@ def generate_svg(activity_data):
     svg.append('</g></svg>')
     return "\n".join(svg)
 
-
+# Example usage:
+# activity_data = {"2024-01-01": 5, "2024-01-02": 10, ...}
+# svg_content = generate_svg(activity_data)
+# print(svg_content)
 
 def update_readme(username, svg_content):
     data = fetch_leetcode_data(username)
