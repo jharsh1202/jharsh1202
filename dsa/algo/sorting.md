@@ -1,5 +1,7 @@
 # Sorting and Searching Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                             | Difficulty | Status   | Notes                                  |
 |----|------------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)                              | Easy       |        |                                        |

@@ -1,5 +1,7 @@
 # Tree Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                       | Difficulty | Status   | Notes                                  |
 |----|------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)    | Easy       |        |                                        |

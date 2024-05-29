@@ -1,5 +1,7 @@
 # Backtracking Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                       | Difficulty | Status   | Notes                                  |
 |----|------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Subsets](https://leetcode.com/problems/subsets/)                                              | Medium     |        |                                        |

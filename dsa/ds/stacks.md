@@ -1,5 +1,7 @@
 # Stack Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                          | Difficulty | Status   | Notes                                  |
 |----|---------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)                             | Easy       |        |                                        |

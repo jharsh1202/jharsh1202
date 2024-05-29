@@ -1,5 +1,7 @@
 # Linked List Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                              | Difficulty | Status   | Notes                                  |
 |----|-------------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)                             | Easy       |        |                                        |

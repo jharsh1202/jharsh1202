@@ -1,5 +1,7 @@
 # Heap Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                     | Difficulty | Status   | Notes                                  |
 |----|----------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)                  | Hard       |        |                                        |

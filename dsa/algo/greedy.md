@@ -1,5 +1,7 @@
 # Greedy Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                       | Difficulty | Status   | Notes                                  |
 |----|------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Jump Game](https://leetcode.com/problems/jump-game/)                                          | Medium     |        |                                        |

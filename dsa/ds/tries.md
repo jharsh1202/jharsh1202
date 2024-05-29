@@ -1,5 +1,7 @@
 # Trie Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                  | Difficulty | Status   | Notes                                  |
 |----|-------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | Medium     |        |                                        |

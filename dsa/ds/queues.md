@@ -1,5 +1,7 @@
 # Queue Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                      | Difficulty | Status   | Notes                                  |
 |----|-----------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)   | Easy       |        |                                        |

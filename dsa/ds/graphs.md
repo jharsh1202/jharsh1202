@@ -1,5 +1,7 @@
 # Graph Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                    | Difficulty | Status   | Notes                                  |
 |----|---------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Number of Islands](https://leetcode.com/problems/number-of-islands/)                       | Medium     |        |                                        |

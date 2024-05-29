@@ -1,5 +1,7 @@
 # Dynamic Programming Questions Tracker
 
+✅ Completed &nbsp; 🔄 Retry &nbsp; 🚧 In Progress
+
 | #  | Question                                                                                      | Difficulty | Status   | Notes                                  |
 |----|-----------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
 | 1  | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)                             | Easy       |        |                                        |
