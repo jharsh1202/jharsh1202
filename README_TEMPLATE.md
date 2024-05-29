@@ -3,7 +3,7 @@
 ## Solved DSA Problems 🚀 
 
 ![LeetCode Activity](./leetcode_activity.svg)
-#### Total: {{total_solved}} | Easy: {{easy_solved}} | Medium: {{medium_solved}} | Hard: {{hard_solved}}
+#### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
 <details>
   <summary>Data Structures</summary>
   
