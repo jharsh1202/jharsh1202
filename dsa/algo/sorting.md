@@ -1,4 +1,4 @@
-# Sorting and Searching LeetCode Questions Preparation Tracker
+# Sorting and Searching Questions Tracker
 
 | #  | Question                                                                                             | Difficulty | Status   | Notes                                  |
 |----|------------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

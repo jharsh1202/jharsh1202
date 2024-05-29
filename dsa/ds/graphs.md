@@ -1,4 +1,4 @@
-# Graph LeetCode Questions Preparation Tracker
+# Graph Questions Tracker
 
 | #  | Question                                                                                    | Difficulty | Status   | Notes                                  |
 |----|---------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

@@ -1,4 +1,4 @@
-# Stack LeetCode Questions Preparation Tracker
+# Stack Questions Tracker
 
 | #  | Question                                                                                          | Difficulty | Status   | Notes                                  |
 |----|---------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

@@ -1,4 +1,4 @@
-# Queue LeetCode Questions Preparation Tracker
+# Queue Questions Tracker
 
 | #  | Question                                                                                      | Difficulty | Status   | Notes                                  |
 |----|-----------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

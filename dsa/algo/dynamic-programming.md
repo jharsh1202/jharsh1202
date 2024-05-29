@@ -1,4 +1,4 @@
-# Dynamic Programming LeetCode Questions Preparation Tracker
+# Dynamic Programming Questions Tracker
 
 | #  | Question                                                                                      | Difficulty | Status   | Notes                                  |
 |----|-----------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

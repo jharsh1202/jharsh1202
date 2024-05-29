@@ -1,4 +1,4 @@
-# Tree LeetCode Questions Preparation Tracker
+# Tree Questions Tracker
 
 | #  | Question                                                                                       | Difficulty | Status   | Notes                                  |
 |----|------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

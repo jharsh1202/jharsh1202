@@ -1,4 +1,4 @@
-# Trie LeetCode Questions Preparation Tracker
+# Trie Questions Tracker
 
 | #  | Question                                                                                  | Difficulty | Status   | Notes                                  |
 |----|-------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

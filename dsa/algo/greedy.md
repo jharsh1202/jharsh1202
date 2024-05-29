@@ -1,4 +1,4 @@
-# Greedy LeetCode Questions Preparation Tracker
+# Greedy Questions Tracker
 
 | #  | Question                                                                                       | Difficulty | Status   | Notes                                  |
 |----|------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

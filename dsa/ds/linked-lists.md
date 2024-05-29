@@ -1,4 +1,4 @@
-# Linked List LeetCode Questions Preparation Tracker
+# Linked List Questions Tracker
 
 | #  | Question                                                                                              | Difficulty | Status   | Notes                                  |
 |----|-------------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

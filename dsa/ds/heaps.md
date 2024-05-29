@@ -1,4 +1,4 @@
-# Heap LeetCode Questions Preparation Tracker
+# Heap Questions Tracker
 
 | #  | Question                                                                                     | Difficulty | Status   | Notes                                  |
 |----|----------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

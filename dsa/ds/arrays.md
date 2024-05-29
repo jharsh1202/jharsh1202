@@ -1,4 +1,4 @@
-# Array LeetCode Questions Preparation Tracker
+# Array Questions Tracker
 
 | #  | Question                                                                                                | Difficulty | Status   | Notes                                  |
 |----|---------------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|

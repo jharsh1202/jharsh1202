@@ -1,4 +1,4 @@
-# Backtracking LeetCode Questions Preparation Tracker
+# Backtracking Questions Tracker
 
 | #  | Question                                                                                       | Difficulty | Status   | Notes                                  |
 |----|------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
