@@ -14,33 +14,29 @@ def generate_activity_data():
         date = (today - timedelta(days=i)).strftime('%Y-%m-%d')
         activity_data[date] = 0  # Default to 0 problems solved per day
     return activity_data
-from datetime import datetime, timedelta
 
 def generate_svg(activity_data, width=900, height=140):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
     svg = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">']
-    svg.append('<style>.small { font: 8px sans-serif; fill: black; }</style>')  # Change font text color to white
-    svg.append('<rect width="100%" height="100%" fill="white" />')  # Add white background
+    svg.append('<style>.small { font: 8px sans-serif; fill: black; }</style>')
+    svg.append('<rect width="100%" height="100%" fill="white" />')
 
     svg.append('<g transform="translate(20, 20)">')
-    
-    # Add day labels
+
     days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     for i, day in enumerate(days):
         svg.append(f'<text class="small" x="-10" y="{i * 13 + 8}" text-anchor="middle">{day}</text>')
 
-    # Add month labels at the top
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     current_month = (datetime.now() - timedelta(days=365)).month
     svg.append('<g transform="translate(0, -10)">')
     for i, (date, count) in enumerate(sorted(activity_data.items())):
         date_obj = datetime.strptime(date, '%Y-%m-%d')
         if date_obj.month != current_month:
-            svg.append(f'<text class="small" x="{i // 7 * 13}" y="-5" fill="white">{months[date_obj.month - 1]}</text>')  # Change font text color to white
+            svg.append(f'<text class="small" x="{i // 7 * 13}" y="-5">{months[date_obj.month - 1]}</text>')
             current_month = date_obj.month
     svg.append('</g>')
 
-    # Draw the heatmap
     for i, (date, count) in enumerate(sorted(activity_data.items())):
         week = i // 7
         day = i % 7
@@ -48,10 +44,9 @@ def generate_svg(activity_data, width=900, height=140):
         x = week * 13
         y = day * 13
         svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" />')
-    
+
     svg.append('</g></svg>')
     return "\n".join(svg)
-
 
 def update_readme(username, svg_content):
     data = fetch_leetcode_data(username)
@@ -59,46 +54,20 @@ def update_readme(username, svg_content):
     easy_solved = data['easySolved']
     medium_solved = data['mediumSolved']
     hard_solved = data['hardSolved']
-    
-    readme_content = f"""## Leetcode 
 
-## Solved DSA Problems 🚀 
+    with open("README_TEMPLATE.md", "r") as template_file:
+        readme_template = template_file.read()
 
-![LeetCode Activity](./leetcode_activity.svg)
-#### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
-<details>
-  <summary>Data Structures</summary>
-  
-  - [Arrays](dsa/ds/arrays.md)
-  - [Linked Lists](dsa/ds/linked-lists.md)
-  - [Stacks](dsa/ds/stacks.md)
-  - [Queues](dsa/ds/queues.md)
-  - [Trees](dsa/ds/trees.md)
-  - [Graphs](dsa/ds/graphs.md)
-  - [Heaps](dsa/ds/heaps.md)
-  - [Tries](dsa/ds/tries.md)
-  - [Hash Tables](dsa/ds/hash-tables.md)
-
-</details>
-
-<details>
-  <summary>Algorithms</summary>
-  
-  - [Sorting](dsa/algo/sorting.md)
-  - [Searching](dsa/algo/searching.md)
-  - [Dynamic Programming](dsa/algo/dynamic-programming.md)
-  - [Greedy Algorithms](dsa/algo/greedy.md)
-  - [Backtracking](dsa/algo/backtracking.md)
-  - [Divide and Conquer](dsa/algo/divide-and-conquer.md)
-  - [Graph Algorithms](dsa/algo/graph-algorithms.md)
-  - [String Algorithms](dsa/algo/string-algorithms.md)
-
-</details>
-"""
+    readme_content = readme_template.format(
+        total_solved=total_solved,
+        easy_solved=easy_solved,
+        medium_solved=medium_solved,
+        hard_solved=hard_solved
+    )
 
     with open("README.md", "w") as f:
         f.write(readme_content)
-    
+
     with open("leetcode_activity.svg", "w") as f:
         f.write(svg_content)
 
