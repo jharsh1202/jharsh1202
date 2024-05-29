@@ -66,24 +66,38 @@ def update_readme(username, svg_content):
 
 ![LeetCode Activity](./leetcode_activity.svg)
 #### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
-## Data Structures
-![Progress](https://progress-bar.dev/0/?title=Arrays)
-![Progress](https://progress-bar.dev/0/?title=Linked%20Lists)
-![Progress](https://progress-bar.dev/0/?title=Stacks)
-![Progress](https://progress-bar.dev/0/?title=Queues)
-![Progress](https://progress-bar.dev/0/?title=Trees)
-![Progress](https://progress-bar.dev/0/?title=Graphs)
-![Progress](https://progress-bar.dev/0/?title=Hash%20Tables)
+# DSA Preparation Tracker
 
-## Algorithms
-![Progress](https://progress-bar.dev/5/?title=Sorting)
-![Progress](https://progress-bar.dev/5/?title=Searching)
-![Progress](https://progress-bar.dev/0/?title=Dynamic%20Programming)
-![Progress](https://progress-bar.dev/0/?title=Greedy%20Algorithms)
-![Progress](https://progress-bar.dev/0/?title=Backtracking)
-![Progress](https://progress-bar.dev/0/?title=Divide%20and%20Conquer)
-![Progress](https://progress-bar.dev/0/?title=Bit%20Manipulation)
-![Progress](https://progress-bar.dev/0/?title=Graph%20Algorithms)
+## Table of Contents
+
+<details>
+  <summary>Data Structures</summary>
+  
+  - [Arrays](dsa/ds/arrays.md)
+  - [Linked Lists](dsa/ds/linked-lists.md)
+  - [Stacks](dsa/ds/stacks.md)
+  - [Queues](dsa/ds/queues.md)
+  - [Trees](dsa/ds/trees.md)
+  - [Graphs](dsa/ds/graphs.md)
+  - [Heaps](dsa/ds/heaps.md)
+  - [Tries](dsa/ds/tries.md)
+  - [Hash Tables](dsa/ds/hash-tables.md)
+
+</details>
+
+<details>
+  <summary>Algorithms</summary>
+  
+  - [Sorting](dsa/algo/sorting.md)
+  - [Searching](dsa/algo/searching.md)
+  - [Dynamic Programming](dsa/algo/dynamic-programming.md)
+  - [Greedy Algorithms](dsa/algo/greedy.md)
+  - [Backtracking](dsa/algo/backtracking.md)
+  - [Divide and Conquer](dsa/algo/divide-and-conquer.md)
+  - [Graph Algorithms](dsa/algo/graph-algorithms.md)
+  - [String Algorithms](dsa/algo/string-algorithms.md)
+
+</details>
 """
 
     with open("README.md", "w") as f:
