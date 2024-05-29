@@ -73,7 +73,7 @@ def main():
         # Convert the timestamp to an integer
         timestamp = int(timestamp)
         # Convert the Unix timestamp to a datetime object
-        dt_object = datetime.utcfromtimestamp(timestamp)
+        dt_object = datetime.fromtimestamp(timestamp)
         # Format the datetime object as a date string
         date_str = dt_object.strftime('%Y-%m-%d')
         # Add the date string as the key in the new dictionary
