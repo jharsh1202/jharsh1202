@@ -19,6 +19,10 @@ def generate_activity_data():
 def generate_svg(activity_data):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
     svg = ['<svg width="900" height="140" viewBox="0 0 900 140" xmlns="http://www.w3.org/2000/svg">']
+    
+    # Add background color
+    svg.append('<rect x="0" y="0" width="900" height="140" fill="#222222" />')
+
     svg.append('<style>.small { font: 8px sans-serif; fill: white; }</style>')  # Change font text color to white
     svg.append('<g transform="translate(20, 20)">')
     
@@ -49,6 +53,7 @@ def generate_svg(activity_data):
     
     svg.append('</g></svg>')
     return "\n".join(svg)
+
 
 
 def update_readme(username, svg_content):

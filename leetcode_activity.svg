@@ -1,4 +1,5 @@
 <svg width="900" height="140" viewBox="0 0 900 140" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="900" height="140" fill="#222222" />
 <style>.small { font: 8px sans-serif; fill: white; }</style>
 <g transform="translate(20, 20)">
 <text class="small" x="-10" y="8" text-anchor="middle">Sun</text>
