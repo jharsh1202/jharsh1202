@@ -17,9 +17,9 @@ def generate_activity_data():
     return activity_data
 from datetime import datetime, timedelta
 
-def generate_svg(activity_data):
+def generate_svg(activity_data, width=900, height=140):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
-    svg = ['<svg width="900" height="140" viewBox="0 0 900 140" xmlns="http://www.w3.org/2000/svg">']
+    svg = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">']
     svg.append('<style>.small { font: 8px sans-serif; fill: black; }</style>')  # Change font text color to white
     svg.append('<rect width="100%" height="100%" fill="white" />')  # Add white background
 
@@ -92,7 +92,7 @@ def main():
         if date in activity_data:
             activity_data[date] = count
 
-    svg_content = generate_svg(activity_data)
+    svg_content = generate_svg(activity_data, width=1200, height=200)
     update_readme(username, svg_content)
 
 if __name__ == "__main__":
