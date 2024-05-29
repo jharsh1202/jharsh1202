@@ -92,7 +92,7 @@ def main():
         if date in activity_data:
             activity_data[date] = count
 
-    svg_content = generate_svg(activity_data, width=750, height=150)
+    svg_content = generate_svg(activity_data)
     update_readme(username, svg_content)
 
 if __name__ == "__main__":
