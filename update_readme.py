@@ -16,21 +16,81 @@ def generate_activity_data():
         activity_data[date] = 0  # Default to 0 problems solved per day
     return activity_data
 
+
+
 def generate_svg(activity_data):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
-    svg = ['<svg width="720" height="110" xmlns="http://www.w3.org/2000/svg">']
-    svg.append('<g transform="translate(20, 20)">')
-    
-    for i, (date, count) in enumerate(sorted(activity_data.items())):
+    svg = [
+        '<svg width="1000" height="200" xmlns="http://www.w3.org/2000/svg">',
+        '<style>.small { font: 8px sans-serif; fill: #333; }</style>',
+        '<g transform="translate(20, 20)">'
+    ]
+
+    # Get the current date and calculate the start of the week
+    today = datetime.datetime.now()
+    start_date = today - datetime.timedelta(days=today.weekday() + 365)
+
+    # Create a dictionary to hold the number of problems solved each day
+    activity = {start_date + datetime.timedelta(days=i): 0 for i in range(365)}
+
+    # Update activity with actual data
+    for date_str, count in activity_data.items():
+        date = datetime.datetime.strptime(date_str, '%Y-%m-%d')
+        if date in activity:
+            activity[date] = count
+
+    # Draw the day and month labels
+    days = ["Mon", "Wed", "Fri"]
+    months = {1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr", 5: "May", 6: "Jun", 7: "Jul", 8: "Aug", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"}
+
+    for i, day in enumerate(days):
+        y = i * 26 + 10
+        svg.append(f'<text x="-10" y="{y}" class="small" text-anchor="end">{day}</text>')
+
+    for i in range(0, 53):
+        month = (start_date + datetime.timedelta(weeks=i)).month
+        if i == 0 or month != (start_date + datetime.timedelta(weeks=i - 1)).month:
+            x = i * 13 + 13
+            svg.append(f'<text x="{x}" y="-5" class="small">{months[month]}</text>')
+
+    # Draw the heatmap
+    for i, (date, count) in enumerate(sorted(activity.items())):
         week = i // 7
         day = i % 7
         color = colors[min(count, len(colors) - 1)]
         x = week * 13
         y = day * 13
-        svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" />')
-    
-    svg.append('</g></svg>')
+        svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" title="{date.strftime("%Y-%m-%d")} - {count} problems solved"/>')
+
+    svg.append('</g>')
+
+    # Add legend
+    legend_x = 20 + 53 * 13 + 20
+    legend_y = 20
+    svg.append(f'<g transform="translate({legend_x}, {legend_y})">')
+    svg.append('<text class="small" y="-5">Activity Legend</text>')
+    for i, color in enumerate(colors):
+        svg.append(f'<rect x="0" y="{i * 15}" width="11" height="11" fill="{color}"/>')
+        svg.append(f'<text x="20" y="{i * 15 + 10}" class="small">{i} problems</text>')
+    svg.append('</g>')
+
+    svg.append('</svg>')
     return "\n".join(svg)
+# def generate_svg(activity_data):
+#     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
+#     svg = ['<svg width="720" height="110" xmlns="http://www.w3.org/2000/svg">']
+#     svg.append('<g transform="translate(20, 20)">')
+    
+#     for i, (date, count) in enumerate(sorted(activity_data.items())):
+#         week = i // 7
+#         day = i % 7
+#         color = colors[min(count, len(colors) - 1)]
+#         x = week * 13
+#         y = day * 13
+#         svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" />')
+    
+#     svg.append('</g></svg>')
+#     return "\n".join(svg)
 
 def update_readme(username, svg_content):
     data = fetch_leetcode_data(username)
