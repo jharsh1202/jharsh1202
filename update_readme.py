@@ -64,8 +64,10 @@ def update_readme(username, svg_content):
     readme_content = f"""## Leetcode 
 
 ## Solved Problems 🚀 
-#### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
+
 ![LeetCode Activity](./leetcode_activity.svg)
+
+#### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
 """
 
     with open("README.md", "w") as f:
