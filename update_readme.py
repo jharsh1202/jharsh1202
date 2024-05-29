@@ -53,10 +53,6 @@ def generate_svg(activity_data):
     svg.append('</g></svg>')
     return "\n".join(svg)
 
-# Example usage:
-# activity_data = {"2024-01-01": 5, "2024-01-02": 10, ...}
-# svg_content = generate_svg(activity_data)
-# print(svg_content)
 
 def update_readme(username, svg_content):
     data = fetch_leetcode_data(username)
@@ -65,13 +61,9 @@ def update_readme(username, svg_content):
     medium_solved = data['mediumSolved']
     hard_solved = data['hardSolved']
     
-    readme_content = f"""## Solved Problems 🚀
-- Total: {total_solved}
-- Easy: {easy_solved}
-- Medium: {medium_solved}
-- Hard: {hard_solved}
+    readme_content = f"""## Leetcode 
 
-## Activity Calendar 
+## Solved Problems 🚀 - Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
 ![LeetCode Activity](./leetcode_activity.svg)
 """
 
