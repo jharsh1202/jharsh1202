@@ -1,6 +1,6 @@
 import requests
 import json
-import datetime
+from datetime import datetime, timedelta
 
 def fetch_leetcode_data(username):
     response = requests.get(f"https://leetcode-stats-api.herokuapp.com/{username}")
@@ -9,88 +9,46 @@ def fetch_leetcode_data(username):
     return response.json()
 
 def generate_activity_data():
-    today = datetime.datetime.now()
+    today = datetime.now()
     activity_data = {}
     for i in range(365):
-        date = (today - datetime.timedelta(days=i)).strftime('%Y-%m-%d')
+        date = (today - timedelta(days=i)).strftime('%Y-%m-%d')
         activity_data[date] = 0  # Default to 0 problems solved per day
     return activity_data
 
-
-
 def generate_svg(activity_data):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
-    svg = [
-        '<svg width="1000" height="200" xmlns="http://www.w3.org/2000/svg">',
-        '<style>.small { font: 8px sans-serif; fill: #333; }</style>',
-        '<g transform="translate(20, 20)">'
-    ]
-
-    # Get the current date and calculate the start of the week
-    today = datetime.datetime.now()
-    start_date = today - datetime.timedelta(days=today.weekday() + 365)
-
-    # Create a dictionary to hold the number of problems solved each day
-    activity = {start_date + datetime.timedelta(days=i): 0 for i in range(365)}
-
-    # Update activity with actual data
-    for date_str, count in activity_data.items():
-        date = datetime.datetime.strptime(date_str, '%Y-%m-%d')
-        if date in activity:
-            activity[date] = count
-
-    # Draw the day and month labels
-    days = ["Mon", "Wed", "Fri"]
-    months = {1: "Jan", 2: "Feb", 3: "Mar", 4: "Apr", 5: "May", 6: "Jun", 7: "Jul", 8: "Aug", 9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"}
-
+    svg = ['<svg width="900" height="140" viewBox="0 0 900 140" xmlns="http://www.w3.org/2000/svg">']
+    svg.append('<style>.small { font: 8px sans-serif; }</style>')
+    svg.append('<g transform="translate(20, 20)">')
+    
+    # Add day labels
+    days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     for i, day in enumerate(days):
-        y = i * 26 + 10
-        svg.append(f'<text x="-10" y="{y}" class="small" text-anchor="end">{day}</text>')
+        svg.append(f'<text class="small" x="-10" y="{i * 13 + 8}" text-anchor="middle">{day}</text>')
 
-    for i in range(0, 53):
-        month = (start_date + datetime.timedelta(weeks=i)).month
-        if i == 0 or month != (start_date + datetime.timedelta(weeks=i - 1)).month:
-            x = i * 13 + 13
-            svg.append(f'<text x="{x}" y="-5" class="small">{months[month]}</text>')
+    # Add month labels at the top
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    current_month = (datetime.now() - timedelta(days=365)).month
+    svg.append('<g transform="translate(0, -10)">')
+    for i, (date, count) in enumerate(sorted(activity_data.items())):
+        date_obj = datetime.strptime(date, '%Y-%m-%d')
+        if date_obj.month != current_month:
+            svg.append(f'<text class="small" x="{i // 7 * 13}" y="-5">{months[date_obj.month - 1]}</text>')
+            current_month = date_obj.month
+    svg.append('</g>')
 
     # Draw the heatmap
-    for i, (date, count) in enumerate(sorted(activity.items())):
+    for i, (date, count) in enumerate(sorted(activity_data.items())):
         week = i // 7
         day = i % 7
         color = colors[min(count, len(colors) - 1)]
         x = week * 13
         y = day * 13
-        svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" title="{date.strftime("%Y-%m-%d")} - {count} problems solved"/>')
-
-    svg.append('</g>')
-
-    # Add legend
-    legend_x = 20 + 53 * 13 + 20
-    legend_y = 20
-    svg.append(f'<g transform="translate({legend_x}, {legend_y})">')
-    svg.append('<text class="small" y="-5">Activity Legend</text>')
-    for i, color in enumerate(colors):
-        svg.append(f'<rect x="0" y="{i * 15}" width="11" height="11" fill="{color}"/>')
-        svg.append(f'<text x="20" y="{i * 15 + 10}" class="small">{i} problems</text>')
-    svg.append('</g>')
-
-    svg.append('</svg>')
+        svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" />')
+    
+    svg.append('</g></svg>')
     return "\n".join(svg)
-# def generate_svg(activity_data):
-#     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
-#     svg = ['<svg width="720" height="110" xmlns="http://www.w3.org/2000/svg">']
-#     svg.append('<g transform="translate(20, 20)">')
-    
-#     for i, (date, count) in enumerate(sorted(activity_data.items())):
-#         week = i // 7
-#         day = i % 7
-#         color = colors[min(count, len(colors) - 1)]
-#         x = week * 13
-#         y = day * 13
-#         svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" />')
-    
-#     svg.append('</g></svg>')
-#     return "\n".join(svg)
 
 def update_readme(username, svg_content):
     data = fetch_leetcode_data(username)
@@ -124,19 +82,12 @@ def main():
     username = "harshit120299"
     data = fetch_leetcode_data(username)
     activity_data = generate_activity_data()
-    # Assuming data['problems_solved_per_day'] is a dict with date as key and problems solved as value
-    # You need to populate activity_data with the actual LeetCode activity data
-    # For example: activity_data['2024-05-27'] = 5
     problems_solved = data.get("submissionCalendar", {})
     converted_data = {}
     for timestamp, value in problems_solved.items():
-        # Convert the timestamp to an integer
         timestamp = int(timestamp)
-        # Convert the Unix timestamp to a datetime object
-        dt_object = datetime.datetime.fromtimestamp(timestamp)
-        # Format the datetime object as a date string
+        dt_object = datetime.fromtimestamp(timestamp)
         date_str = dt_object.strftime('%Y-%m-%d')
-        # Add the date string as the key in the new dictionary
         converted_data[date_str] = value
 
     for date, count in converted_data.items():
