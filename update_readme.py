@@ -66,7 +66,6 @@ def update_readme(username, svg_content):
 ## Solved Problems 🚀 
 
 ![LeetCode Activity](./leetcode_activity.svg)
-
 #### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
 """
 
