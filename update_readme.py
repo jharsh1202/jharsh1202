@@ -66,17 +66,15 @@ def update_readme(username, svg_content):
     hard_solved = data['hardSolved']
     
     readme_content = f"""
-# LeetCode Stats
 
-![LeetCode Stats](https://leetcode-stats-api.herokuapp.com/{username})
 
-## Solved Problems
+## Solved Problems 🚀
 - Total: {total_solved}
 - Easy: {easy_solved}
 - Medium: {medium_solved}
 - Hard: {hard_solved}
 
-## Activity Calendar
+## Activity Calendar 
 ![LeetCode Activity](./leetcode_activity.svg)
 """
 
