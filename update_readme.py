@@ -57,6 +57,9 @@ def update_readme(username, svg_content):
     medium_solved = data['mediumSolved']
     hard_solved = data['hardSolved']
     
+    # Encode SVG content to embed it directly in the README.md
+    svg_data_uri = f"data:image/svg+xml;base64,{svg_content.encode('utf-8').decode('utf-8')}"
+
     readme_content = f"""
 # LeetCode Stats
 
@@ -69,14 +72,12 @@ def update_readme(username, svg_content):
 - Hard: {hard_solved}
 
 ## Activity Calendar
-![LeetCode Activity](./leetcode_activity.svg)
+<img src="{svg_data_uri}" alt="LeetCode Activity" />
+
 """
 
     with open("README.md", "w") as f:
         f.write(readme_content)
-    
-    with open("leetcode_activity.svg", "w") as f:
-        f.write(svg_content)
 
 def main():
     username = "harshit120299"
