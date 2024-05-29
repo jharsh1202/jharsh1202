@@ -65,10 +65,7 @@ def update_readme(username, svg_content):
     medium_solved = data['mediumSolved']
     hard_solved = data['hardSolved']
     
-    readme_content = f"""
-
-
-## Solved Problems 🚀
+    readme_content = f"""## Solved Problems 🚀
 - Total: {total_solved}
 - Easy: {easy_solved}
 - Medium: {medium_solved}
