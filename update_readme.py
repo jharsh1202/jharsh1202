@@ -19,7 +19,7 @@ def generate_activity_data():
 def generate_svg(activity_data):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
     svg = ['<svg width="900" height="140" viewBox="0 0 900 140" xmlns="http://www.w3.org/2000/svg">']
-    svg.append('<style>.small { font: 8px sans-serif; }</style>')
+    svg.append('<style>.small { font: 8px sans-serif; fill: white; }</style>')  # Change font text color to white
     svg.append('<g transform="translate(20, 20)">')
     
     # Add day labels
@@ -34,7 +34,7 @@ def generate_svg(activity_data):
     for i, (date, count) in enumerate(sorted(activity_data.items())):
         date_obj = datetime.strptime(date, '%Y-%m-%d')
         if date_obj.month != current_month:
-            svg.append(f'<text class="small" x="{i // 7 * 13}" y="-5">{months[date_obj.month - 1]}</text>')
+            svg.append(f'<text class="small" x="{i // 7 * 13}" y="-5" fill="white">{months[date_obj.month - 1]}</text>')  # Change font text color to white
             current_month = date_obj.month
     svg.append('</g>')
 
@@ -50,6 +50,7 @@ def generate_svg(activity_data):
     svg.append('</g></svg>')
     return "\n".join(svg)
 
+
 def update_readme(username, svg_content):
     data = fetch_leetcode_data(username)
     total_solved = data['totalSolved']
@@ -57,9 +58,6 @@ def update_readme(username, svg_content):
     medium_solved = data['mediumSolved']
     hard_solved = data['hardSolved']
     
-    # Encode SVG content to embed it directly in the README.md
-    svg_data_uri = f"data:image/svg+xml;base64,{svg_content.encode('utf-8').decode('utf-8')}"
-
     readme_content = f"""
 # LeetCode Stats
 
@@ -72,12 +70,14 @@ def update_readme(username, svg_content):
 - Hard: {hard_solved}
 
 ## Activity Calendar
-<img src="{svg_data_uri}" alt="LeetCode Activity" />
-
+![LeetCode Activity](./leetcode_activity.svg)
 """
 
     with open("README.md", "w") as f:
         f.write(readme_content)
+    
+    with open("leetcode_activity.svg", "w") as f:
+        f.write(svg_content)
 
 def main():
     username = "harshit120299"

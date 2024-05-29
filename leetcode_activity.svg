@@ -1,5 +1,5 @@
 <svg width="900" height="140" viewBox="0 0 900 140" xmlns="http://www.w3.org/2000/svg">
-<style>.small { font: 8px sans-serif; }</style>
+<style>.small { font: 8px sans-serif; fill: white; }</style>
 <g transform="translate(20, 20)">
 <text class="small" x="-10" y="8" text-anchor="middle">Sun</text>
 <text class="small" x="-10" y="21" text-anchor="middle">Mon</text>
@@ -9,18 +9,18 @@
 <text class="small" x="-10" y="73" text-anchor="middle">Fri</text>
 <text class="small" x="-10" y="86" text-anchor="middle">Sat</text>
 <g transform="translate(0, -10)">
-<text class="small" x="0" y="-5">Jun</text>
-<text class="small" x="52" y="-5">Jul</text>
-<text class="small" x="104" y="-5">Aug</text>
-<text class="small" x="169" y="-5">Sep</text>
-<text class="small" x="221" y="-5">Oct</text>
-<text class="small" x="286" y="-5">Nov</text>
-<text class="small" x="338" y="-5">Dec</text>
-<text class="small" x="390" y="-5">Jan</text>
-<text class="small" x="455" y="-5">Feb</text>
-<text class="small" x="507" y="-5">Mar</text>
-<text class="small" x="559" y="-5">Apr</text>
-<text class="small" x="624" y="-5">May</text>
+<text class="small" x="0" y="-5" fill="white">Jun</text>
+<text class="small" x="52" y="-5" fill="white">Jul</text>
+<text class="small" x="104" y="-5" fill="white">Aug</text>
+<text class="small" x="169" y="-5" fill="white">Sep</text>
+<text class="small" x="221" y="-5" fill="white">Oct</text>
+<text class="small" x="286" y="-5" fill="white">Nov</text>
+<text class="small" x="338" y="-5" fill="white">Dec</text>
+<text class="small" x="390" y="-5" fill="white">Jan</text>
+<text class="small" x="455" y="-5" fill="white">Feb</text>
+<text class="small" x="507" y="-5" fill="white">Mar</text>
+<text class="small" x="559" y="-5" fill="white">Apr</text>
+<text class="small" x="624" y="-5" fill="white">May</text>
 </g>
 <rect x="0" y="0" width="11" height="11" fill="#ebedf0" />
 <rect x="0" y="13" width="11" height="11" fill="#ebedf0" />
