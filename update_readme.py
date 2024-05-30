@@ -15,14 +15,14 @@ def generate_activity_data():
         activity_data[date] = 0  # Default to 0 problems solved per day
     return activity_data
 
-def generate_svg(activity_data, width=900, height=140, padding=20, padding_top=20, padding_left=30):
+def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_left=20):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
     svg = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">']
     svg.append('<style>.small { font: 8px sans-serif; fill: #7A7A7A; }</style>')
     svg.append('<rect width="100%" height="100%" fill="white" />')
 
     # Adjust the transform to include padding
-    svg.append(f'<g transform="translate({padding_left}, {padding_top})">')
+    svg.append(f'<g transform="translate({padding_top}, {padding_left})">')
 
     days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     for i, day in enumerate(days):
