@@ -15,13 +15,14 @@ def generate_activity_data():
         activity_data[date] = 0  # Default to 0 problems solved per day
     return activity_data
 
-def generate_svg(activity_data, width=10, height=10):
+def generate_svg(activity_data, width=900, height=140, padding=20, padding_top=40, padding_left=50):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
     svg = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">']
     svg.append('<style>.small { font: 8px sans-serif; fill: #7A7A7A; }</style>')
     svg.append('<rect width="100%" height="100%" fill="white" />')
 
-    svg.append(f'<g transform="translate({width}, {height})">')
+    # Adjust the transform to include padding
+    svg.append(f'<g transform="translate({padding_left}, {padding_top})">')
 
     days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     for i, day in enumerate(days):
@@ -29,12 +30,19 @@ def generate_svg(activity_data, width=10, height=10):
 
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     current_month = (datetime.now() - timedelta(days=365)).month
-    svg.append('<g transform="translate(0, -10)">')
+    month_positions = {}
+
     for i, (date, count) in enumerate(sorted(activity_data.items())):
         date_obj = datetime.strptime(date, '%Y-%m-%d')
+        week = i // 7
         if date_obj.month != current_month:
-            svg.append(f'<text class="small" x="{i // 7 * 13}" y="-5">{months[date_obj.month - 1]}</text>')
+            if week not in month_positions:
+                month_positions[week] = date_obj.month
             current_month = date_obj.month
+
+    svg.append('<g transform="translate(0, -10)">')
+    for week, month in month_positions.items():
+        svg.append(f'<text class="small" x="{week * 13}" y="-5">{months[month - 1]}</text>')
     svg.append('</g>')
 
     for i, (date, count) in enumerate(sorted(activity_data.items())):
