@@ -33,16 +33,21 @@
 
 </details>
 
+
 <details>
   <summary>Completed Projects</summary>
-    - [TinyURL Service](https://github.com/jharsh1202/tinyurl-service/blob/main/readme.md)
+  
+  - [TinyURL Service - Go](https://github.com/jharsh1202/tinyurl-service/blob/main/readme.md)
+  - [Attendance App Backend - Django](https://github.com/jharsh1202/jyn_pathshala)
+
+  - [Attendance App Frontend - Flutter](https://github.com/Sparsh-Malhotra/pathshala)
 
 </details>
 
 
 <details>
   <summary>On Going Projects</summary>
-  
+
 </details>
 
 <details>
