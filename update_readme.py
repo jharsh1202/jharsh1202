@@ -56,7 +56,6 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
     svg.append('</g></svg>')
     return "\n".join(svg)
 
-
 def update_readme(username, svg_content):
     data = fetch_leetcode_data(username)
     total_solved = data['totalSolved']
