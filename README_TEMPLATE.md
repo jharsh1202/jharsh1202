@@ -2,7 +2,9 @@
 
 ## Solved DSA Problems 🚀 
 
-![LeetCode Activity](./leetcode_activity.svg)
+<a href="https://www.leetcode.com/harshit120299">
+    ![LeetCode Activity](./leetcode_activity.svg)
+</a>
 #### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
 <details>
   <summary>Data Structures</summary>
@@ -39,7 +41,6 @@
   
   - [TinyURL Service - Go](https://github.com/jharsh1202/tinyurl-service/blob/main/readme.md)
   - [Attendance App Backend - Django](https://github.com/jharsh1202/jyn_pathshala)
-
   - [Attendance App Frontend - Flutter](https://github.com/Sparsh-Malhotra/pathshala)
 
 </details>
