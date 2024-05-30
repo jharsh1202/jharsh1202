@@ -34,6 +34,18 @@
 </details>
 
 <details>
+  <summary>Completed Projects</summary>
+    - [TinyURL Service](https://github.com/jharsh1202/tinyurl-service/blob/main/readme.md)
+
+</details>
+
+
+<details>
+  <summary>On Going Projects</summary>
+  
+</details>
+
+<details>
   <summary>Other Computer Science Topics</summary>
 
   ### System Design
