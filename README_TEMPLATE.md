@@ -2,8 +2,9 @@
 
 ## Solved DSA Problems 🚀 
 
+
 <a href="https://www.leetcode.com/harshit120299">
-    ![LeetCode Activity](./leetcode_activity.svg)
+  <img src="./leetcode_activity.svg" alt="LeetCode Activity"/>
 </a>
 #### Total: {total_solved} | Easy: {easy_solved} | Medium: {medium_solved} | Hard: {hard_solved}
 <details>
