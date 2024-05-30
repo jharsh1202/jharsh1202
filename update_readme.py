@@ -15,13 +15,13 @@ def generate_activity_data():
         activity_data[date] = 0  # Default to 0 problems solved per day
     return activity_data
 
-def generate_svg(activity_data, width=900, height=140):
+def generate_svg(activity_data, width=10, height=10):
     colors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"]
     svg = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">']
     svg.append('<style>.small { font: 8px sans-serif; fill: #7A7A7A; }</style>')
     svg.append('<rect width="100%" height="100%" fill="white" />')
 
-    svg.append('<g transform="translate(20, 20)">')
+    svg.append(f'<g transform="translate({width}, {height})">')
 
     days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     for i, day in enumerate(days):
