@@ -2,8 +2,13 @@
 
 ## Solved DSA Problems 🚀 
 
-![LeetCode Activity](./leetcode_activity.svg)
+
+<a href="https://www.leetcode.com/harshit120299">
+  <img src="./leetcode_activity.svg" alt="LeetCode Activity"/>
+</a>
+
 #### Total: 70 | Easy: 40 | Medium: 29 | Hard: 1
+
 <details>
   <summary>Data Structures</summary>
   
@@ -30,6 +35,22 @@
   - [Divide and Conquer](dsa/algo/divide-and-conquer.md)
   - [Graph Algorithms](dsa/algo/graph-algorithms.md)
   - [String Algorithms](dsa/algo/string-algorithms.md)
+
+</details>
+
+
+<details>
+  <summary>Completed Projects</summary>
+  
+  - [TinyURL Service - Go](https://github.com/jharsh1202/tinyurl-service/blob/main/readme.md)
+  - [Attendance App Backend - Django](https://github.com/jharsh1202/jyn_pathshala)
+  - [Attendance App Frontend - Flutter](https://github.com/Sparsh-Malhotra/pathshala)
+
+</details>
+
+
+<details>
+  <summary>On Going Projects</summary>
 
 </details>
 
