@@ -45,14 +45,14 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
         svg.append(f'<text class="small" x="{week * 13}" y="-5">{months[month - 1]}</text>')
     svg.append('</g>')
 
-    # Calculate the day of the week for the first date in the activity data
+    # Calculate the day of the week for the last date in the activity data
     start_date = datetime.strptime(list(activity_data.keys())[-1], '%Y-%m-%d')
-    start_day_of_week = start_date.weekday()  # 0=Monday, 6=Sunday
+    start_day_of_week = (start_date.weekday() + 1) % 7  # 0=Sunday, 6=Saturday, adjust to match the SVG's day labels
 
     for i, (date, count) in enumerate(sorted(activity_data.items())):
         date_obj = datetime.strptime(date, '%Y-%m-%d')
-        week = (i + start_day_of_week + 1) // 7  # Adjust for the starting day of the week
-        day = (i + start_day_of_week + 1) % 7    # Adjust for the starting day of the week
+        week = (i + start_day_of_week) // 7
+        day = (i + start_day_of_week) % 7
         color = colors[min(count, len(colors) - 1)]
         x = week * 13
         y = day * 13
