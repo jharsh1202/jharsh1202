@@ -27,7 +27,12 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
     # Adjust the transform to include padding
     svg.append(f'<g transform="translate({padding_left}, {padding_top})">')
 
-    days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"]
+    today = datetime.now()
+    start_day = today.strftime('%a')
+    days_of_week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    start_index = days_of_week.index(start_day)
+    days = days_of_week[start_index:] + days_of_week[:start_index]
+
     for i, day in enumerate(days):
         svg.append(f'<text class="small" x="-10" y="{i * 13 + 8}" text-anchor="middle">{day}</text>')
 
