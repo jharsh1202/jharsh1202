@@ -75,7 +75,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
         color = colors[min(count, len(colors) - 1)]
         x = week * 13
         y = day * 13
-        svg.append(f'<rect x="{x+5}" y="{y+5}" width="11" height="11" fill="{color}" />')
+        svg.append(f'<rect x="{x+5}" y="{y+5}" width="12" height="12" fill="{color}" />')
 
     svg.append('</g></svg>')
     return "\n".join(svg)
