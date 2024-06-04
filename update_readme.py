@@ -41,7 +41,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
 
     svg = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">']
     svg.append('<style>.small { font: 8px sans-serif; fill: #7A7A7A; }</style>')
-    svg.append('<rect width="100%" height="100%" fill="black" />')
+    svg.append('<rect width="100%" height="100%" fill="white" />')
 
     svg.append(f'<g transform="translate({padding_left}, {padding_top})">')
 
@@ -65,7 +65,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
 
     svg.append('<g transform="translate(0, -10)">')
     for week, month in month_positions.items():
-        svg.append(f'<text class="small" x="{week * 13}" y="10">{month_labels[month - 1]}</text>')
+        svg.append(f'<text class="small" x="{week * 13}" y="-5">{month_labels[month - 1]}</text>')
     svg.append('</g>')
 
     # Generate the activity squares
@@ -75,7 +75,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
         color = colors[min(count, len(colors) - 1)]
         x = week * 13
         y = day * 13
-        svg.append(f'<rect x="{x+5}" y="{y+5}" width="12" height="12" fill="{color}" />')
+        svg.append(f'<rect x="{x}" y="{y}" width="11" height="11" fill="{color}" />')
 
     svg.append('</g></svg>')
     return "\n".join(svg)
