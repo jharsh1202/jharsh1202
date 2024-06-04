@@ -65,7 +65,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
 
     svg.append('<g transform="translate(0, -10)">')
     for week, month in month_positions.items():
-        svg.append(f'<text class="small" x="{week * 13}" y="-5">{month_labels[month - 1]}</text>')
+        svg.append(f'<text class="small" x="{week * 13}" y="5">{month_labels[month - 1]}</text>')
     svg.append('</g>')
 
     # Generate the activity squares
