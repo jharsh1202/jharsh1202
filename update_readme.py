@@ -22,7 +22,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
     svg.append('<rect width="100%" height="100%" fill="white" />')
 
     # Adjust the transform to include padding
-    svg.append(f'<g transform="translate({padding_top}, {padding_left})">')
+    svg.append(f'<g transform="translate({padding_left}, {padding_top})">')
 
     days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     for i, day in enumerate(days):
@@ -45,9 +45,13 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
         svg.append(f'<text class="small" x="{week * 13}" y="-5">{months[month - 1]}</text>')
     svg.append('</g>')
 
+    start_date = datetime.strptime(list(activity_data.keys())[0], '%Y-%m-%d')
+    start_day = start_date.weekday()  # 0=Monday, 6=Sunday
+
     for i, (date, count) in enumerate(sorted(activity_data.items())):
-        week = i // 7
-        day = i % 7
+        date_obj = datetime.strptime(date, '%Y-%m-%d')
+        week = (i + start_day) // 7
+        day = (i + start_day) % 7
         color = colors[min(count, len(colors) - 1)]
         x = week * 13
         y = day * 13
