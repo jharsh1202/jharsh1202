@@ -4,8 +4,11 @@ from datetime import datetime, timedelta
 def fetch_leetcode_data(username):
     response = requests.get(f"https://leetcode-stats-api.herokuapp.com/{username}")
     if response.status_code != 200:
-        raise Exception("Failed to fetch LeetCode data")
-    return response.json()
+        raise Exception(f"Failed to fetch LeetCode data for user: {username}")
+    data = response.json()
+    if not data:
+        raise Exception(f"No data found for user: {username}")
+    return data
 
 def generate_activity_data():
     today = datetime.now()
@@ -22,7 +25,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
     svg.append('<rect width="100%" height="100%" fill="white" />')
 
     # Adjust the transform to include padding
-    svg.append(f'<g transform="translate({padding_top}, {padding_left})">')
+    svg.append(f'<g transform="translate({padding_left}, {padding_top})">')
 
     days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     for i, day in enumerate(days):
@@ -42,7 +45,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
 
     svg.append('<g transform="translate(0, -10)">')
     for week, month in month_positions.items():
-        svg.append(f'<text class="small" x="{week * 13}" y="-5">{months[month - 1]}</text>')
+        svg.append(f'<text class="small" x="{week * 13}" y="5">{months[month - 1]}</text>')
     svg.append('</g>')
 
     for i, (date, count) in enumerate(sorted(activity_data.items())):
@@ -81,22 +84,25 @@ def update_readme(username, svg_content):
 
 def main():
     username = "harshit120299"
-    data = fetch_leetcode_data(username)
-    activity_data = generate_activity_data()
-    problems_solved = data.get("submissionCalendar", {})
-    converted_data = {}
-    for timestamp, value in problems_solved.items():
-        timestamp = int(timestamp)
-        dt_object = datetime.fromtimestamp(timestamp)
-        date_str = dt_object.strftime('%Y-%m-%d')
-        converted_data[date_str] = value
+    try:
+        data = fetch_leetcode_data(username)
+        activity_data = generate_activity_data()
+        problems_solved = data.get("submissionCalendar", {})
+        converted_data = {}
+        for timestamp, value in problems_solved.items():
+            timestamp = int(timestamp)
+            dt_object = datetime.fromtimestamp(timestamp)
+            date_str = dt_object.strftime('%Y-%m-%d')
+            converted_data[date_str] = value
 
-    for date, count in converted_data.items():
-        if date in activity_data:
-            activity_data[date] = count
+        for date, count in converted_data.items():
+            if date in activity_data:
+                activity_data[date] = count
 
-    svg_content = generate_svg(activity_data)
-    update_readme(username, svg_content)
+        svg_content = generate_svg(activity_data)
+        update_readme(username, svg_content)
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()
