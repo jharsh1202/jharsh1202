@@ -41,7 +41,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
 
     svg = [f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">']
     svg.append('<style>.small { font: 8px sans-serif; fill: #7A7A7A; }</style>')
-    svg.append('<rect width="100%" height="100%" fill="white" />')
+    svg.append('<rect width="100%" height="100%" fill="black" />')
 
     svg.append(f'<g transform="translate({padding_left}, {padding_top})">')
 
@@ -65,7 +65,7 @@ def generate_svg(activity_data, width=900, height=140, padding_top=15, padding_l
 
     svg.append('<g transform="translate(0, -10)">')
     for week, month in month_positions.items():
-        svg.append(f'<text class="small" x="{week * 13}" y="5">{month_labels[month - 1]}</text>')
+        svg.append(f'<text class="small" x="{week * 13}" y="10">{month_labels[month - 1]}</text>')
     svg.append('</g>')
 
     # Generate the activity squares
