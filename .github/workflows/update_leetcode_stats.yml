@@ -2,7 +2,7 @@ name: Update LeetCode Stats
 
 on:
   schedule:
-    - cron: '0 0/2 * * *' # Runs every 8 hours
+    - cron: '0 0 * * *' # Runs every 8 hours
   push:
     branches:
       - main
