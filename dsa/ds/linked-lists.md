@@ -4,7 +4,7 @@
 
 | #  | Question                                                                                              | Difficulty | Status   | Notes                                  |
 |----|-------------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
-| 1  | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)                             | Easy       |        |                                        |
+| 1  | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)                             | Easy       |  ✅      |   store prev, next                     |
 | 2  | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)                       | Easy       |        |                                        |
 | 3  | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)                                 | Easy       |        |                                        |
 | 4  | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)   | Medium     |        |                                        |
