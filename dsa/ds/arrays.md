@@ -6,7 +6,7 @@
 
 | #  | Question                                                                                                | Difficulty | Status   | Notes                                  | Time Complexity |  Space  Complexity  |
 |----|---------------------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|-----------------|---------------------|
-| 1  | [Two Sum](https://leetcode.com/problems/two-sum/)                                                       | Easy       |    🔄    |                                        |                 |                     |
+| 1  | [Two Sum](https://leetcode.com/problems/two-sum/)                                                       | Easy       |    🔄    |  Handling cases of falsey when using if/else, eg 0(int) for index.                                      |                 |                     |
 | 2  | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)       | Easy       |    🔄    |                                        |                 |                     |
 | 3  | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)                                 | Easy       |    ✅    |                                        |                 |                     |
 | 4  | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)             | Medium     |    ✅    |                                        |                 |                     |
