@@ -19,7 +19,7 @@
 | 11 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy     |    ✅    |                                        |                 |                     |
 | 12 | [Rotate Array](https://leetcode.com/problems/rotate-array/)                                             | Medium     |          |                                        |                 |                     |
 | 13 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)             | Medium     |          |                                        |                 |                     |
-| 14 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/)                                           | Easy       |          |                                        |                 |                     |
+| 14 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/)                                           | Easy       |    ✅    |                                        |                 |                     |
 | 15 | [Merge Intervals](https://leetcode.com/problems/merge-intervals/)                                       | Medium     |          |                                        |                 |                     |
 | 16 | [Insert Interval](https://leetcode.com/problems/insert-interval/)                                       | Hard       |          |                                        |                 |                     |
 | 17 | [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)                                           | Easy       |          |                                        |                 |                     |
