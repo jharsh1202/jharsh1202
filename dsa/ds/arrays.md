@@ -28,7 +28,7 @@
 | 20 | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)                                           | Medium     |          |                                        |                 |                     |
 | 21 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)                           | Medium     |          |                                        |                 |                     |
 | 22 | [Missing Number](https://leetcode.com/problems/missing-number/)                                         | Easy       |   ✅     |                                        |                 |                     |
-| 23 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) | Easy      |          |                             |                 |                     |
+| 23 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) | Easy      |    ✅   |                             |                 |                     |
 | 24 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)                   | Medium     |          |                                        |                 |                     |
 | 25 | [Largest Number](https://leetcode.com/problems/largest-number/)                                         | Medium     |          |                                        |                 |                     |
 | 26 | [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)                   | Medium     |          |                                        |                 |                     |
