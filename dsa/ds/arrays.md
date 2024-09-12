@@ -24,7 +24,7 @@
 | 16 | [Insert Interval](https://leetcode.com/problems/insert-interval/)                                       | Hard       |          |                                        |                 |                     |
 | 17 | [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)                                           | Easy       |          |                                        |                 |                     |
 | 18 | [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)                                     | Medium     |          |                                        |                 |                     |
-| 19 | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)                                   | Medium     |    🚧    |                                        |                 |                     |
+| 19 | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)                                   | Medium     |    ✅    |                                        |                 |                     |
 | 20 | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)                                           | Medium     |          |                                        |                 |                     |
 | 21 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)                           | Medium     |          |                                        |                 |                     |
 | 22 | [Missing Number](https://leetcode.com/problems/missing-number/)                                         | Easy       |   ✅     |                                        |                 |                     |
