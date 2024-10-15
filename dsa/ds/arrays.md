@@ -10,7 +10,7 @@
 | 2  | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)       | Easy       |    🔄    |                                        |                 |                     |
 | 3  | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)                                 | Easy       |    ✅    |                                        |                 |                     |
 | 4  | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)             | Medium     |    ✅    |                                        |                 |                     |
-| 5  | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)                                     | Medium     |    🔄    | Kadane's alg                           |     O(n)        |                     |
+| 5  | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)                                     | Medium     |    🔄    | Kadane's Algorithm                          |     O(n)        |                     |
 | 6  | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)                     | Medium     |    🔄    |                                        |     O(n)        |                     |
 | 7  | [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Medium |    🔄    |                                        |     O(logn)     |                     |
 | 8  | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)         | Medium     |          | Either left or right side is rotated   |     O(logn)     |                     |
@@ -29,7 +29,7 @@
 | 21 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)                           | Medium     |          |                                        |                 |                     |
 | 22 | [Missing Number](https://leetcode.com/problems/missing-number/)                                         | Easy       |   ✅     |                                        |                 |                     |
 | 23 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) | Easy      |    ✅   |                             |                 |                     |
-| 24 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)                   | Medium     |          |                                        |                 |                     |
+| 24 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)                   | Medium     |          | Floyd's cycle detection Algorithm (Tortoise and Hare) |                 |                     |
 | 25 | [Largest Number](https://leetcode.com/problems/largest-number/)                                         | Medium     |          |                                        |                 |                     |
 | 26 | [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)                   | Medium     |          |                                        |                 |                     |
 | 27 | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)       | Medium     |          |                                        |                 |                     |
