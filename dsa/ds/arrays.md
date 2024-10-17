@@ -31,7 +31,7 @@
 | 23 | [Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/) | Easy      |    ✅   |                             |                 |                     |
 | 24 | [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)                   | Medium     |          | Floyd's cycle detection Algorithm (Tortoise and Hare) |                 |                     |
 | 25 | [Largest Number](https://leetcode.com/problems/largest-number/)                                         | Medium     |          |      String Comparator  x+y vs y+x     |                 |                     |
-| 26 | [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)                   | Medium     |          |                                        |                 |                     |
+| 26 | [Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)                   | Medium     |          |  sys.maxsize, 2 pointer with shrink    |
 | 27 | [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)       | Medium     |          |                                        |                 |                     |
 | 28 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)                       | Medium     |          |                                        |                 |                     |
 | 29 | [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)                 | Easy       |    ✅    |                                        |                 |                     |
