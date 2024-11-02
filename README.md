@@ -7,7 +7,7 @@
   <img src="./leetcode_activity.svg" alt="LeetCode Activity"/>
 </a>
 
-#### Total: 82 | Easy: 45 | Medium: 35 | Hard: 2
+#### Total: 84 | Easy: 47 | Medium: 35 | Hard: 2
 
 <details>
   <summary>Data Structures</summary>
@@ -35,23 +35,6 @@
   - [Divide and Conquer](dsa/algo/divide-and-conquer.md)
   - [Graph Algorithms](dsa/algo/graph-algorithms.md)
   - [String Algorithms](dsa/algo/string-algorithms.md)
-
-</details>
-
-<details>
-  <summary>Fundamental Concepts</summary>
-
-  - [OOPS](https://blog.algomaster.io/p/basic-oop-concepts-explained-with-code)
-  - [SOLID Principles](https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898)
-  - [SOLID Principles w Code](https://blog.algomaster.io/p/solid-principles-explained-with-code)
-
-
-</details>
-
-<details>
-  <summary>Sources</summary>
-  
-  - [System Design](https://github.com/ashishps1/awesome-low-level-design?tab=readme-ov-file)
 
 </details>
 
