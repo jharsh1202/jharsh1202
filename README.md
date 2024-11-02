@@ -38,6 +38,23 @@
 
 </details>
 
+<details>
+  <summary>Fundamental Concepts</summary>
+
+  - [OOPS](https://blog.algomaster.io/p/basic-oop-concepts-explained-with-code)
+  - [SOLID Principles](https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898)
+  - [SOLID Principles w Code](https://blog.algomaster.io/p/solid-principles-explained-with-code)
+
+
+</details>
+
+<details>
+  <summary>Sources</summary>
+  
+  - [System Design](https://github.com/ashishps1/awesome-low-level-design?tab=readme-ov-file)
+
+</details>
+
 
 <details>
   <summary>Completed Projects</summary>
