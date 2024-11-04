@@ -35,3 +35,12 @@
 | 20 |    |            |          |     |
 | 21 |    |            |          |     |
 
+[How to answer LLD Interview Questions](https://blog.algomaster.io/p/how-to-answer-a-lld-interview-problem)
+
+| #  | LLD Interview Questions Easy | Difficulty | Status   | Notes                                  |
+|----|---------------------------------------------------------------------------------------------|------------|----------|----------------------------------------|
+| 1 | [Parking Lot](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/parking-lot.md)   |            |          |     |
+| 2 | [Vending Machine](https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/vending-machine.md)   |            |          |     |
+| 3 |    |            |          |     |
+| 4 |    |            |          |     |
+| 5 |    |            |          |     |
