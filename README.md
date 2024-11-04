@@ -38,6 +38,7 @@
 
 </details>
 
+[awesome-low-level-design](cs/1-awesome-low-level-design.md)
 
 <details>
   <summary>Completed Projects</summary>
