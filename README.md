@@ -7,7 +7,7 @@
   <img src="./leetcode_activity.svg" alt="LeetCode Activity"/>
 </a>
 
-#### Total: 147 | Easy: 61 | Medium: 80 | Hard: 6
+#### Total: 148 | Easy: 62 | Medium: 80 | Hard: 6
 
 <details>
   <summary>Data Structures</summary>
